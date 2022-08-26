@@ -1,6 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+Github搭建个人博客</title>
+    <url>/2022/08/26/Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="什么是-hexo-？"><a href="#什么是-hexo-？" class="headerlink" title="什么是 hexo ？"></a>什么是 hexo ？</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h3 id="什么是-github-pages-？"><a href="#什么是-github-pages-？" class="headerlink" title="什么是 github pages ？"></a>什么是 github pages ？</h3><p>GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里托管和发布自己的静态网站页面。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>Hexo 基于 Node.js，搭建过程中还需要使用 npm（Node.js 已带） 和 git，因此先搭建本地操作环境，以Llinux操作系统为例，安装 Node.js 和 Git。</p>
+<ul>
+<li>Node.js：<a href="https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a></li>
+<li>Git：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+</ul>
+<h4 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h4><ol>
+<li><p>从官网下载Node.js长期维护版安装包 node-v16.14.2-linux-x64.tar.xz</p>
+</li>
+<li><p>新建～&#x2F;software文件夹，解压Node.js安装包文件到～&#x2F;software文件夹下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/software</span><br><span class="line">$ tar -xf node-v16.14.2-linux-x64.tar.xz -C ~/software</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压文件的 bin 目录底下包含了 node、npm 等命令，我们可以使用 ln 命令来设置软连接：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mv ~/software/node-v16.14.2-linux-x64 ~/software/nodejs</span><br><span class="line">$ sudo ln -s /home/username/software/nodejs/bin/npm /usr/local/bin/ </span><br><span class="line">$ sudo ln -s /home/username/software/nodejs/bin/node /usr/local/bin/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看node.js和npm软件版本，以检验是否安装成功。</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v16.14.2</span><br><span class="line">$ npm -v</span><br><span class="line">8.5.0</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><ol>
+<li><p>Linux (Deepin,Ubuntu, Debian)：命令安装git</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看git软件版本，以检验是否安装成功。在终端输入git –version 并回车，如下图出现程序版本号即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">git version 2.20.1</span><br></pre></td></tr></table></figure></li>
+</ol>
+<span id="more"></span>
+
+
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><ol>
+<li><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成以后，使用 ln 命令来设置软连接</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo ln -s /home/username/software/nodejs/bin/hexo /usr/local/bin/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看hexo软件版本，以检验是否安装成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: linux 5.17.3-amd64-desktop Deepin 20.6 20.6</span><br><span class="line">node: 16.14.2</span><br><span class="line">v8: 9.4.146.24-node.20</span><br><span class="line">uv: 1.43.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.18.1</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.45.1</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.4</span><br><span class="line">openssl: 1.1.1n+quic</span><br><span class="line">cldr: 40.0</span><br><span class="line">icu: 70.1</span><br><span class="line">tz: 2021a3</span><br><span class="line">unicode: 14.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="升级-Hexo"><a href="#升级-Hexo" class="headerlink" title="升级 Hexo"></a>升级 Hexo</h3><p>官方强烈建议永远安装最新版本的 Hexo，以及推荐的 Node.js 版本。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm update -g hexo-cli     # 升级hexo软件到最新版</span><br></pre></td></tr></table></figure>
+
+<p>软件兼容适配表</p>
+<table>
+<thead>
+<tr>
+<th>Hexo 版本</th>
+<th>最低兼容 Node.js 版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6.0+</td>
+<td>12.13.0</td>
+</tr>
+<tr>
+<td>5.0+</td>
+<td>10.13.0</td>
+</tr>
+<tr>
+<td>4.1 - 4.2</td>
+<td>8.10</td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>8.6</td>
+</tr>
+<tr>
+<td>3.3 - 3.9</td>
+<td>6.9</td>
+</tr>
+<tr>
+<td>3.2 - 3.3</td>
+<td>0.12</td>
+</tr>
+<tr>
+<td>3.0 - 3.1</td>
+<td>0.10 or iojs</td>
+</tr>
+<tr>
+<td>0.0.1 - 2.8</td>
+<td>0.10</td>
+</tr>
+</tbody></table>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p>在家目录创建个人博客文件夹 blog_folder</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~</span><br><span class="line">$ hexo init blog_folder      # 初始化博客目录文件</span><br><span class="line">$ cd blog_folder             # 进入博客目录</span><br><span class="line">$ npm install                # 安装程序组件</span><br><span class="line">$ hexo generate              # 生成静态文件</span><br><span class="line">$ hexo server                # 启动网站服务</span><br></pre></td></tr></table></figure>
+
+<p>使用浏览器访问 <a href="http://localhost:4000/">http://localhost:4000</a> ,出现 Hexo 默认页面，代表本地博客安装成功！</p>
+<blockquote>
+<p>注意：如果出现页面加载不出来，可能是默认端口被占用了，<br>终端执行快捷键 Ctrl+C 关闭服务器，重新运行 hexo server -p 6000 更改端口号<br>重新使用浏览器访问 <a href="http://localhost:6000/">http://localhost:6000</a> ，查看是否出现 Hexo 默认页面</p>
+</blockquote>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="注册-Github-帐号"><a href="#注册-Github-帐号" class="headerlink" title="注册 Github 帐号"></a>注册 Github 帐号</h3><ol>
+<li><p>进入 github 的官网：<a href="https://github.com/%EF%BC%8C%E5%9C%A8%E4%B8%BB%E9%A1%B5%E2%80%9CEmail">https://github.com/，在主页“Email</a> Address”处输入自己的邮箱，然后点击“Sign up for  Github ” 按钮，输入将来登录Github的密码，注册属于自己的帐号。</p>
+<blockquote>
+<p>注意：</p>
+<p>1、用户名：起名字要慎重，建议用有自己特色、简单易记不重复的，它将决定你博客的网络地址、仓库名称等。<br>2、电子邮箱地址：不要乱填，填写你真实的常用邮箱，注册时Github是要发激活链接到你邮箱的。<br>3、用户密码：不少8个字符（ 包括数字 和小写字母）输入完会有一个人机验证，你只需把图片矫正即可。</p>
+<p>4、账户类型：选择个人免费版。</p>
+<p>5、问卷调查：选择你感兴趣的信息。</p>
+<p>6、验证邮箱：登录注册邮箱，完成帐号激活。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="创建-Github-Pages-仓库"><a href="#创建-Github-Pages-仓库" class="headerlink" title="创建 Github Pages 仓库"></a>创建 Github Pages 仓库</h3><ol>
+<li>使用已经注册的帐号登录Github网站，然后点击页面右上角的加号–&gt;New repository.</li>
+<li>Owner: “Github用户名”，Repository name：”Github用户名.github.io”</li>
+<li>勾选 “Initialize this repository with” 下方的 “Add a README file” 选项</li>
+<li>填好后点击 “Create repository ” 按钮创建仓库。</li>
+</ol>
+<h3 id="配置-Git-连接-Github-Pages-远程仓库"><a href="#配置-Git-连接-Github-Pages-远程仓库" class="headerlink" title="配置 Git 连接 Github Pages 远程仓库"></a>配置 Git 连接 Github Pages 远程仓库</h3><ol>
+<li><p>在Linux操作系统下配置 Git 用户信息，打开命令终端窗口，输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;GitHub 用户名&quot;</span><br><span class="line">$ git config --global user.email &quot;GitHub 邮箱&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装ssh软件，创建ssh密钥：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo apt install ssh                   # 安装软件</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;      # 创建密钥，然后一路默认回车</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看 ssh 密钥：id_rsa 为私钥，id_rsa.pub 为公钥.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls ~/.ssh</span><br><span class="line">id_rsa  id_rsa.pub </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开 id_rsa.pub 文件，复制ssh公钥内容到剪贴板：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ vim ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加ssh公钥到Github上：</p>
+<ul>
+<li><p>登陆 GitHub ，点击页面右上角头像，从弹出菜单进入 Settings 页面。</p>
+</li>
+<li><p>然后选择左边栏的 SSH and GPG keys，点击 New SSH key。</p>
+</li>
+<li><p>Title 随便填写个英文名字，粘贴复制的 id_rsa.pub 内容到 Key 中。</p>
+</li>
+<li><p>最后点击 Add SSH key 按钮完成添加。</p>
+</li>
+</ul>
+</li>
+<li><p>验证连接：打开终端，输入 ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a> 命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>出现 “Are you sure you want to continue connecting ? ”，输入 yes 回车确认，</p>
+<p>最后显示 “Hi username ! You’ve successfully authenticated……” 即连接成功。</p>
+</li>
+<li><p>配置个人令牌：</p>
+<p>​        由于 github 在 2021 年 8 月 13日将原有的用户密码验证方式替换成了”personal access token”，因此我们这里需要将用户密码替换成”personal access token”,用于部署Hexo 到 GitHub Pages 时验证用户身份。</p>
+<ul>
+<li><p>登录Github网站，进入“Settings–&gt;Developer Settings–&gt;Personal access tokens–&gt;Generate new Token”</p>
+</li>
+<li><p>输入Note：hexo blog, Expiration: 30day,Select Scopes: 选择repo.</p>
+</li>
+<li><p>点击页面底部的”Generate Token“ 按钮，生成个人令牌。</p>
+</li>
+<li><p>复制个人令牌内容，保存成文档文件，供以后验证身份时使用。</p>
+</li>
+<li><p>如果您有令牌，则可以在通过 HTTPS 执行 Git 操作时输入令牌，而不是密码。</p>
+<p>例如，在命令行中输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git clone https://github.com/username/repo.git</span><br><span class="line">Username: your_username</span><br><span class="line">Password: your_token</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="部署Hexo-到-GitHub-Pages"><a href="#部署Hexo-到-GitHub-Pages" class="headerlink" title="部署Hexo 到 GitHub Pages"></a>部署Hexo 到 GitHub Pages</h3><p>本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问。</p>
+<ol>
+<li><p>首先安装 hexo-deployer-git 插件程序：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后修改~&#x2F;blog_folder&#x2F;_config.yml 文件末尾的 Deployment 部分，修改成如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/&lt;username&gt;/&lt;project&gt;</span><br><span class="line">  # example, https://github.com/shallingzhang/shallingzhang.github.io</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行 hexo deploy 将网站上传部署到 GitHub Pages。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ hexo clean &amp;&amp; hexo deploy   # 清除缓存和上传部署</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看域名 https:&#x2F;&#x2F;用户名.github.io 如果可以看到 Hexo 网站，说明GitHub上的网页部署成功。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/08/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -17,17 +199,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>hexo</title>
-    <url>/2022/08/18/hexo/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>haha</tag>
-        <tag>hehe</tag>
-      </tags>
   </entry>
 </search>
