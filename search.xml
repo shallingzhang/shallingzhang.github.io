@@ -155,7 +155,7 @@
 </ul>
 <p><img src="/uploads/add_ssh_key.png" alt="添加ssh公钥" title="添加ssh公钥"></p>
 <ol start="6">
-<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a> 命令</li>
+<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;</a> 命令</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
@@ -206,6 +206,151 @@
         <tag>hexo</tag>
         <tag>github</tag>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+Next主题美化博客</title>
+    <url>/2022/08/31/Hexo-Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有了前面那篇如何搭建博客的文章介绍指导，我们现在可以很容易的搭建博客了，不过既然是属于自己的博客网站，自然也就想让其更加美观，Hexo 博客支持很多主题风格，官网 <a href="https://hexo.io/themes/">https://hexo.io/themes/</a> 截止目前拥370个不同风格的主题，下面介绍一下Hexo博客的主题美化操作。</p>
+<p>Next 主题 <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> 是为 Hexo 打造的一款高品质优雅主题，它是用爱从头制作的。支持非常多的外部插件和功能选项。我目前使用的是 NexT.Gemini V8.12.3 版本，下面我会介绍关于 Next 8 主题的基本安装配置和界面美化。</p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>确保你已经安装了Hexo 并成功地创建了一个站点，因为以下文档要求你在站点根目录(blog_folder)下操作。</p>
+<h3 id="安装-Next-主题"><a href="#安装-Next-主题" class="headerlink" title="安装 Next 主题"></a>安装 Next 主题</h3><p>安装 Hexo 主题的2种方式: </p>
+<ol>
+<li><p>打开终端，切换到 Hexo 站点根目录，通过 npm 安装 Next 主题:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd blog_folder</span><br><span class="line">$ npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开终端，切换到 Hexo 站点根目录，使用 git下载 Next 主题的源代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd blog_folder</span><br><span class="line">$ git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="升级-Next-主题"><a href="#升级-Next-主题" class="headerlink" title="升级 Next 主题"></a>升级 Next 主题</h3><p>Next 主题的新版本每月发布一次，请在更新主题前阅读发布说明，可以使用以下命令更新Next主题：</p>
+<ol>
+<li><p>通过npm安装最新版本:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd hexo-site</span><br><span class="line">$ npm install hexo-theme-next@latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或者更新到最新的主分支:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd blog_folder</span><br><span class="line">$ cd themes/next</span><br><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>通过修改配置文件可以直接修改主题样式Git</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在安装 Hexo 和 Next 之后，你可能会发现有两个配置文件被 Hexo 使用，它们都被称为 _config.yml:</p>
+<ol>
+<li><p>第一个在站点根目录 blog_folder下，它包含了Hexo的配置。</p>
+</li>
+<li><p>第二个在主题根目录下(例如：thems&#x2F;next&#x2F;_config. yml 或 node_modules&#x2F;hexo-theme-next&#x2F;_config.yml)。它由 Next 提供，包含主题的配置。</p>
+</li>
+</ol>
+<p>让我们把第一个文件叫做 Hexo配置文件，把第二个文件叫做 Next 配置文件。</p>
+<blockquote>
+<p>注意：npm方式安装主题，默认配置文件在node_modules&#x2F;hexo-theme-next&#x2F;_config.yml，git方式安装主题，默认配置文件在themes&#x2F;next&#x2F;_config.yml </p>
+</blockquote>
+<p>但是，不建议直接修改主题配置文件，因为通过git或npm升级下一个版本主题时，配置文件会被覆盖，那如何解决这个问题呢？</p>
+<ol>
+<li>请确保你使用的是 Hexo 5.0或更高版本。</li>
+<li>在站点的根目录下创建一个配置文件：_config.next.yml。</li>
+<li>将所需的Next主题选项从NexT配置文件复制到此配置文件。</li>
+</ol>
+<p>如果是第一次安装 Next，则使用以下命令复制整个NexT配置文件即可:</p>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Installed through npm</span><br><span class="line">cp node_modules/hexo-theme-next/_config.yml _config.next.yml</span><br><span class="line"></span><br><span class="line"># Installed through </span><br><span class="line">cp themes/next/_config.yml _config.next.yml</span><br></pre></td></tr></table></figure>
+
+<p>以后所有配置只需要更改站点根目录下的_config.yml和 _config.next.yml两个配置文件就可以了，升级Next时也不会受影响。</p>
+<h3 id="Hexo-基本配置"><a href="#Hexo-基本配置" class="headerlink" title="Hexo 基本配置"></a>Hexo 基本配置</h3><p><strong>更改站点根目录下的 _config.yml 文件</strong></p>
+<ol>
+<li><p>站点基本配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site                      # 站点配置</span><br><span class="line">title: Shalling&#x27;s Blog      # 网站标题</span><br><span class="line">subtitle: &#x27;新时代农民工&#x27;      # 网站副标题</span><br><span class="line">description: &#x27;Stay hungry,Stay foolish.&#x27;    # 网站描述</span><br><span class="line">keywords:</span><br><span class="line">author: Shalling Zhang      # 作者昵称</span><br><span class="line">language: zh-CN             # 显示语言</span><br><span class="line">timezone: &#x27;Asia/Shanghai&#x27;   # 所在时区</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启用 Next 主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">#theme: landscape   # 禁用默认主题</span><br><span class="line">theme: next         # 启用next主题</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改 Hexo 配置文件后，需要重新生成站点文件，新的主题样式才能生效。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>Hexo is running at <a href="http://localhost:4000/">http://localhost:4000/</a> . Press Ctrl+C to stop.</p>
+<h3 id="Next-基本配置"><a href="#Next-基本配置" class="headerlink" title="Next 基本配置"></a>Next 基本配置</h3><p><strong>更改站点根目录下的 _config.next.yml 文件</strong></p>
+<ol>
+<li><p>主题风格方案配置</p>
+<p>Next主题自带4种不同的风格方案，取消哪个方案名称前面的#注释，即采用该方案</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># ---------------------------------------------------------------</span><br><span class="line"># Scheme Settings   </span><br><span class="line"># ---------------------------------------------------------------</span><br><span class="line"></span><br><span class="line"># Schemes       # 主题方案（Muse、Mist、Pisces、Gemini 共4种，可任选1种）</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini  # 采用 Gemini 方案</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启夜间模式</p>
+<p>夜间模式没有独立切换开关，会跟随系统主题自动切换显示效果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Dark Mode</span><br><span class="line">darkmode: true  # true开启，false关闭</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义网站图标</p>
+<p>在站点根目录下的source目录新建_uploads文件夹用于存放站点图片资源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  # small: /images/favicon-16x16-next.png</span><br><span class="line">  # medium: /images/favicon-32x32-next.png</span><br><span class="line">  # apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  # safari_pinned_tab: /images/logo.svg</span><br><span class="line">  small: /uploads/favicon-16x16-next.png    # 网站图标路径</span><br><span class="line">  medium: /uploads/favicon-32x32-next.png   # 网站图标路径</span><br><span class="line">  apple_touch_icon: /uploads/apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: /uploads/logo.svg</span><br><span class="line">  #android_manifest: /manifest.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置 “知识共享国际许可协议”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Creative Commons 4.0 International License.</span><br><span class="line"># See: https://creativecommons.org/about/cclicenses/</span><br><span class="line">creative_commons:</span><br><span class="line">  # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero</span><br><span class="line">  license: by-nc-sa   # license 值</span><br><span class="line">  # Available values: big | small</span><br><span class="line">  size: small         # 显示大小</span><br><span class="line">  sidebar: true       # 侧边栏是否显示</span><br><span class="line">  post: true          # 文章是否显示</span><br><span class="line">  # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span><br><span class="line">  # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span><br><span class="line">  language: deed.zh   # 中文</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置网站菜单栏</p>
+<p>新增加菜单项，需要新增加对应的页面，</p>
+<p>首先，取消 about、tags、categories前面的#注释符号</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || fa fa-home                      # 首页</span><br><span class="line">  about: /about/ || fa fa-user               # 关于</span><br><span class="line">  tags: /tags/ || fa fa-tags                 # 标签</span><br><span class="line">  categories: /categories/ || fa fa-th       # 分类</span><br><span class="line">  archives: /archives/ || fa fa-archive      # 归档</span><br><span class="line">  #schedule: /schedule/ || fa fa-calendar</span><br><span class="line">  #sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: /404/ || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+
+<p>其次，新增about、tags、categories页面</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new page about           # 新增 about 页面</span><br><span class="line">$ hexo new page tags            # 新增 tags  页面</span><br><span class="line">$ hexo new page categories      # 新增 categories 页面</span><br></pre></td></tr></table></figure>
+
+<p>在站点根目录source&#x2F;_posts&#x2F;下会生成tags、categories、about三个文件夹，每个文件夹中都有一个index.md文件，接下来分别修改每个文件内容。</p>
+<p> 标签页</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2022-08-19 11:06:30</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p> 分类页</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2022-08-19 11:06:43</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p> 关于页</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 关于</span><br><span class="line">date: 2022-08-19 11:06:23</span><br><span class="line">type: about</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>侧边栏位置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position.</span><br><span class="line">  # position: left     # 页面左侧</span><br><span class="line">  position: right      # 页面右侧</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改网站默认头像</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  #url: /images/avatar.gif</span><br><span class="line">  url: /uploads/avatar.png  # 头像图片位置</span><br><span class="line">  # If true, the avatar will be displayed in circle.</span><br><span class="line">  rounded: false   # true 头像外边框显示圆形</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: false   # 鼠标悬浮，图片旋转</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置社交链接图标</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/shallingzhang || fab fa-github</span><br><span class="line">  E-Mail: mailto:2026355878@qq.com || fa fa-envelope</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置脚标显示：</p>
+<p>Powered by Hexo &amp; Next 信息是否显示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Powered by Hexo &amp; NexT,true or false to display.</span><br><span class="line">  powered: true  # false 不显示</span><br></pre></td></tr></table></figure>
+
+<p>备案信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn</span><br><span class="line">  beian:</span><br><span class="line">    enable: false    # true 开启显示</span><br><span class="line">    icp: 京ICP备 1234567890号-1</span><br><span class="line">    # The digit in the num of gongan beian.</span><br><span class="line">    gongan_id: 1234567890</span><br><span class="line">    # The full num of gongan beian.</span><br><span class="line">    gongan_num: 京公网安备 1234567890号</span><br><span class="line">    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download</span><br><span class="line">    gongan_icon_url: /uploads/beian.png</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="hexo-deployer-git"><a href="#hexo-deployer-git" class="headerlink" title="hexo-deployer-git"></a>hexo-deployer-git</h3><p>插件说明</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 一键部署功能：让你只需一条命令就能将Hexo网站部署到GitHub服务器上。 </span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>修改配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ vim _config.yml   # 在文件尾部添加如下代码</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git         # 部署类型 git</span><br><span class="line">  repo: https://github.com/shallingzhang/shallingzhang.github.io  # 仓库地址</span><br><span class="line">  branch: main      # 分支名称 mian</span><br><span class="line">  message:          # 自定义提交信息</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo-generator-searchdb"><a href="#hexo-generator-searchdb" class="headerlink" title="hexo-generator-searchdb"></a>hexo-generator-searchdb</h3><p>插件说明</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 搜索数据生成插件:能够生成一个搜索索引文件，该文件包含你的文章的所有必要数据，你可以用这些数据为你的博客编写一个本地搜索引擎。</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>修改配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ vim _config.yml       # 在文件尾部添加如下代码</span><br><span class="line"></span><br><span class="line">#Search</span><br><span class="line">## Plugins : hexo-generator-searchdb,local search engine.</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br><span class="line">  format: html</span><br><span class="line"></span><br><span class="line">$ vim _config.next.yml  # true，开启本地搜索菜单</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo-word-counter"><a href="#hexo-word-counter" class="headerlink" title="hexo-word-counter"></a>hexo-word-counter</h3><p>插件说明</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 在 Hexo 博客站点中统计文章的符号个数和阅读时间</span><br></pre></td></tr></table></figure>
+
+<p>安装插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-word-counter --save</span><br></pre></td></tr></table></figure>
+
+<p>修改配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ vim _config.yml       # 在文件尾部添加如下代码</span><br><span class="line"></span><br><span class="line"># hexo-word-counter</span><br><span class="line">## Plugins : hexo-word-counter,local count engine.</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
