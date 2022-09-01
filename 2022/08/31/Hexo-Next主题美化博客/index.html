@@ -14,10 +14,12 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"shallingzhang.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"width":300},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
@@ -29,7 +31,7 @@
 <meta property="og:description" content="前言有了前面那篇如何搭建博客的文章介绍指导，我们现在可以很容易的搭建博客了，不过既然是属于自己的博客网站，自然也就想让其更加美观，Hexo 博客支持很多主题风格，官网 https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; 截止目前拥370个不同风格的主题，下面介绍一下Hexo博客的主题美化操作。 Next 主题 https:&#x2F;&#x2F;theme-next.js.org&#x2F; 是为 Hexo 打造的一款高品质优雅主">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-31T07:05:15.000Z">
-<meta property="article:modified_time" content="2022-08-31T09:41:06.576Z">
+<meta property="article:modified_time" content="2022-09-01T06:09:20.485Z">
 <meta property="article:author" content="Shalling Zhang">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="next">
@@ -46,6 +48,7 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Hexo+Next主题美化博客 | Shalling's Blog</title>
   
+
 
 
 
@@ -149,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Next-%E4%B8%BB%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">安装 Next 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-Next-%E4%B8%BB%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">升级 Next 主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">Hexo 基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">Next 基本配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-deployer-git"><span class="nav-number">4.1.</span> <span class="nav-text">hexo-deployer-git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-generator-searchdb"><span class="nav-number">4.2.</span> <span class="nav-text">hexo-generator-searchdb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-word-counter"><span class="nav-number">4.3.</span> <span class="nav-text">hexo-word-counter</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Next-%E4%B8%BB%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">安装 Next 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7-Next-%E4%B8%BB%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">升级 Next 主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">Hexo 基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">Next 基本配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-deployer-git"><span class="nav-number">4.1.</span> <span class="nav-text">hexo-deployer-git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-generator-searchdb"><span class="nav-number">4.2.</span> <span class="nav-text">hexo-generator-searchdb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-word-counter"><span class="nav-number">4.3.</span> <span class="nav-text">hexo-word-counter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96"><span class="nav-number">5.</span> <span class="nav-text">美化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">5.1.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -255,9 +258,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-08-31 15:05:15 / 修改时间：17:41:06" itemprop="dateCreated datePublished" datetime="2022-08-31T15:05:15+08:00">2022-08-31</time>
+      <time title="创建时间：2022-08-31 15:05:15" itemprop="dateCreated datePublished" datetime="2022-08-31T15:05:15+08:00">2022-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-01 14:09:20" itemprop="dateModified" datetime="2022-09-01T14:09:20+08:00">2022-09-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -270,13 +279,20 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>6.2k</span>
+      <span>6.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -295,7 +311,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有了前面那篇如何搭建博客的文章介绍指导，我们现在可以很容易的搭建博客了，不过既然是属于自己的博客网站，自然也就想让其更加美观，Hexo 博客支持很多主题风格，官网 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 截止目前拥370个不同风格的主题，下面介绍一下Hexo博客的主题美化操作。</p>
-<p>Next 主题 <a target="_blank" rel="noopener" href="https://theme-next.js.org/">https://theme-next.js.org/</a> 是为 Hexo 打造的一款高品质优雅主题，它是用爱从头制作的。支持非常多的外部插件和功能选项。我目前使用的是 NexT.Gemini V8.12.3 版本，下面我会介绍关于 Next 8 主题的基本安装配置和界面美化。</p>
+<p>Next 主题 <a target="_blank" rel="noopener" href="https://theme-next.js.org/">https://theme-next.js.org/</a> 是为 Hexo 打造的一款高品质优雅主题，支持非常多的外部插件和功能选项。我目前使用的是 NexT.Gemini V8.12.3 版本，下面我会介绍关于 Next 8 主题的基本安装配置和界面美化。</p>
 <span id="more"></span>
 
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>确保你已经安装了Hexo 并成功地创建了一个站点，因为以下文档要求你在站点根目录(blog_folder)下操作。</p>
@@ -427,6 +443,11 @@
 <p>修改配置</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ vim _config.yml       # 在文件尾部添加如下代码</span><br><span class="line"></span><br><span class="line"># hexo-word-counter</span><br><span class="line">## Plugins : hexo-word-counter,local count engine.</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a target="_blank" rel="noopener" href="https://vkali.com/categories/Hexo/">https://vkali.com/categories/Hexo/</a></p>
+<p><a target="_blank" rel="noopener" href="http://yearito.cn/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/">http://yearito.cn/categories/技术/博客/</a></p>
+
     </div>
 
     
@@ -508,6 +529,24 @@
     <span title="站点阅读时长">10 分钟</span>
   </span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
@@ -515,6 +554,7 @@
   </footer>
 
   
+  <script size="300" alpha="0.8" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
@@ -525,12 +565,17 @@
 
 
 
+  <script src="/js/third-party/pace.js"></script>
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
 
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
 
 </body>
 </html>

@@ -155,7 +155,7 @@
 </ul>
 <p><img src="/uploads/add_ssh_key.png" alt="添加ssh公钥" title="添加ssh公钥"></p>
 <ol start="6">
-<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a> 命令</li>
+<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a> 命令</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
@@ -212,7 +212,7 @@
     <title>Hexo+Next主题美化博客</title>
     <url>/2022/08/31/Hexo-Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有了前面那篇如何搭建博客的文章介绍指导，我们现在可以很容易的搭建博客了，不过既然是属于自己的博客网站，自然也就想让其更加美观，Hexo 博客支持很多主题风格，官网 <a href="https://hexo.io/themes/">https://hexo.io/themes/</a> 截止目前拥370个不同风格的主题，下面介绍一下Hexo博客的主题美化操作。</p>
-<p>Next 主题 <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> 是为 Hexo 打造的一款高品质优雅主题，它是用爱从头制作的。支持非常多的外部插件和功能选项。我目前使用的是 NexT.Gemini V8.12.3 版本，下面我会介绍关于 Next 8 主题的基本安装配置和界面美化。</p>
+<p>Next 主题 <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> 是为 Hexo 打造的一款高品质优雅主题，支持非常多的外部插件和功能选项。我目前使用的是 NexT.Gemini V8.12.3 版本，下面我会介绍关于 Next 8 主题的基本安装配置和界面美化。</p>
 <span id="more"></span>
 
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>确保你已经安装了Hexo 并成功地创建了一个站点，因为以下文档要求你在站点根目录(blog_folder)下操作。</p>
@@ -343,6 +343,11 @@
 
 <p>修改配置</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/blog_folder</span><br><span class="line">$ vim _config.yml       # 在文件尾部添加如下代码</span><br><span class="line"></span><br><span class="line"># hexo-word-counter</span><br><span class="line">## Plugins : hexo-word-counter,local count engine.</span><br><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://vkali.com/categories/Hexo/">https://vkali.com/categories/Hexo/</a></p>
+<p><a href="http://yearito.cn/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/">http://yearito.cn/categories/技术/博客/</a></p>
 ]]></content>
       <categories>
         <category>linux</category>
