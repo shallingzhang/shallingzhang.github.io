@@ -2260,6 +2260,10 @@ header.header {
 .post-reward div span {
   display: block;
 }
+.post-reward div:hover span {
+  animation: next-roll 0.1s infinite linear;
+  pointer-events: none;
+}
 .post-reward img {
   display: inline-block;
   margin: 0.8em 2em 0;
@@ -2987,3 +2991,61 @@ mark.search-keyword {
     padding: 10px 12px;
   }
 }
+/* 隐藏顶部线条 
+.headband {
+  display: none;
+}
+*/
+/* 顶部边距 */
+.header,
+.main-inner {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .header,
+  .main-inner {
+    margin-top: 0;
+  }
+}
+/* 侧边栏圆角 */
+.site-brand-container {
+  border-radius: 18px 18px 0 0;
+}
+@media (max-width: 767px) {
+  .site-brand-container {
+    border-radius: 0 0 18px 18px;
+  }
+}
+/*
+// 添加背景图片
+body {
+      background: url(/uploads/background.jpg); //自己喜欢的图片地址
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: 50% 50%;
+      @media (prefers-color-scheme: dark) {
+        background-image: none;
+      }
+}
+
+//博客内容透明化 0-1
+//文章内容的透明度设置
+.main-inner {
+  opacity: 0.8;
+}
+
+//侧边框的透明度设置
+.sidebar {
+  opacity: 0.8;
+}
+//菜单栏的透明度设置
+.header-inner {
+  background: rgba(255,255,255,0.8);
+}
+//搜索框（local-search）的透明度设置
+.popup {
+  opacity: 0.9;
+}
+
+*/
