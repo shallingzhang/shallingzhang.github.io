@@ -3013,7 +3013,7 @@ mark.search-keyword {
 }
 @media (max-width: 767px) {
   .site-brand-container {
-    border-radius: 0 0 18px 18px;
+    border-radius: 0 0 0 0;
   }
 }
 /*

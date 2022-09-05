@@ -31,7 +31,7 @@
 <h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h4><ol>
 <li>Linux (Deepin,Ubuntu, Debian)：在系统终端命令安装 git 软件</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>查看 git 软件版本，以检验是否安装成功，在终端输入 git - -version 并回车，如下图出现程序版本号即可。</li>
@@ -155,7 +155,7 @@
 </ul>
 <p><img src="/uploads/add_ssh_key.png" alt="添加ssh公钥" title="添加ssh公钥"></p>
 <ol start="6">
-<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;</a> 命令</li>
+<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;</a> 命令</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
