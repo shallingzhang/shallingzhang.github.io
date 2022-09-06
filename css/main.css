@@ -2991,6 +2991,12 @@ mark.search-keyword {
     padding: 10px 12px;
   }
 }
+.fireworks {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+}
 /* 隐藏顶部线条 
 .headband {
   display: none;
