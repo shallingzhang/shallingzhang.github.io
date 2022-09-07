@@ -155,7 +155,7 @@
 </ul>
 <p><img src="/uploads/add_ssh_key.png" alt="添加ssh公钥" title="添加ssh公钥"></p>
 <ol start="6">
-<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;</a> 命令</li>
+<li>验证连接：打开终端，输入 ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a> 命令</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
@@ -393,10 +393,16 @@
 <h3 id="鼠标"><a href="#鼠标" class="headerlink" title="鼠标"></a>鼠标</h3><p>安装fireworks点击特效动画</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install next-theme/hexo-next-fireworks  # Fireworks animation for NexT.</span><br></pre></td></tr></table></figure>
 
-<h4 id="参考站点"><a href="#参考站点" class="headerlink" title="参考站点"></a>参考站点</h4><p><a href="https://vkali.com/categories/Hexo/">https://vkali.com/categories/Hexo/</a></p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  # Code Highlight theme</span><br><span class="line">  # All available themes: https://theme-next.js.org/highlight/</span><br><span class="line">  theme:  # 代码块主题配色</span><br><span class="line">    #light: default</span><br><span class="line">    #dark: stackoverflow-dark</span><br><span class="line">    light: base16/tomorrow-night</span><br><span class="line">    dark: base16/tomorrow-night</span><br><span class="line">  prism:</span><br><span class="line">    light: prism</span><br><span class="line">    dark: prism-dark</span><br><span class="line">  # Add copy button on codeblock</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: true   # 启用复制按钮</span><br><span class="line">    # Available values: default | flat | mac</span><br><span class="line">    style: default</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="关于-hexo-helper-live2d-与-busuanzi-count-冲突"><a href="#关于-hexo-helper-live2d-与-busuanzi-count-冲突" class="headerlink" title="关于 hexo-helper-live2d 与 busuanzi-count 冲突"></a>关于 hexo-helper-live2d 与 busuanzi-count 冲突</h2><p><a href="https://zerobio.github.io/archives/c9759728.html">https://zerobio.github.io/archives/c9759728.html</a></p>
+<h2 id="参考站点"><a href="#参考站点" class="headerlink" title="参考站点"></a>参考站点</h2><p><a href="https://vkali.com/categories/Hexo/">https://vkali.com/categories/Hexo/</a></p>
 <p><a href="http://yearito.cn/categories/">http://yearito.cn/categories/</a></p>
 <p><a href="https://pinlyu.com/">https://pinlyu.com/</a></p>
 <p><a href="https://github.com/next-theme/awesome-next">https://github.com/next-theme/awesome-next</a></p>
+<p><a href="https://zerobio.github.io/archives/c9759728.html">https://zerobio.github.io/archives/c9759728.html</a></p>
 ]]></content>
       <categories>
         <category>linux</category>
@@ -424,5 +430,46 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>关于hexo-helper-live2d与busuanzi-count冲突</title>
+    <url>/2022/09/07/%E5%85%B3%E4%BA%8Ehexo-helper-live2d%E4%B8%8Ebusuanzi-count%E5%86%B2%E7%AA%81/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我安装了 <code>hexo-helper-live2d</code> 插件配置了网页宠物之后，发现 <code>busuanzi</code> 统计功能失效了，那我们有必要重新将它开启。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>我的 <code>Next</code> 主题的 <code>version</code> 是 <code>8.10.1</code>；<code>Next</code> 主题关于 <code>live2d</code> 和 <code>busuanzi</code> 的不兼容性，官方也在 <code>Github issue</code> 上进行了讨论，但是也没有很好的解决办法。有兴趣的同学可以自行前往 <code>Github issue</code> 查看。</p>
+<p><code>Github issue:</code> <a href="https://github.com/EYHN/hexo-helper-live2d/issues/161">https://github.com/EYHN/hexo-helper-live2d/issues/161</a></p>
+<p><code>https://boyinthesun.cn/post/error-live2d-busuanzi/</code> 我根据 <code>Github issue</code> 提供的解决办法，针对于 <code>Next-8.10.1</code> 失败，并没有解决我的问题，于是在 <code>https://boyinthesun.cn/post/error-live2d-busuanzi/</code> 基础上，终于通过下面的办法实现了这两个插件的共存。</p>
+<p>通过查看网页源码，发现在 <code>busuanzi</code> 插入的 <code>&lt;span&gt;</code> 标签中多了个 <code>style</code>。</p>
+<p><a href="https://zerobio.github.io/images/image-20220312231832625.png"><img src="https://zerobio.github.io/images/image-20220312231832625.png" alt="img"></a></p>
+<p><code>style=&quot;display: none;&quot;</code> 这个样式存在代表着这个区块将不会才页面中显示；而当我们将 <code>none</code> 修改成 <code>inline</code> 之后，会发现当前页面中的 <code>阅读次数：</code> 出现了，于是我们找到了问题所在。</p>
+<span id="more"></span>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>同 <code>https://boyinthesun.cn/post/error-live2d-busuanzi/</code> 帖子提到的办法，先将 <code>busuanzi.pure.mini.js</code> 下载到本地，并存放至 <code>&lt;hexo-site&gt;/node_modules/hexo-theme-next/source/js/</code> ；接着我们找到 <code>Next</code> 主题关于 <code>busuanzi</code> 的设置。对于新手来说，很难找到这个 <code>.njk</code>。于是我们可以在站点根目录下通过 <code>find</code> 命令来查找关键字。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd &lt;hexo-site&gt;</span><br><span class="line">find ./ -name &quot;busuanzi*&quot;</span><br><span class="line">## 输出结果</span><br><span class="line">## ./node_modules/hexo-theme-next/layout/_third-party/statistics/busuanzi-counter.njk</span><br></pre></td></tr></table></figure>
+
+<p>于是我们找到了 <code>./node_modules/hexo-theme-next/layout/_third-party/statistics/busuanzi-counter.njk</code> 发现里面是这样的。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.busuanzi_count.enable %&#125;</span><br><span class="line">  &lt;script&#123;&#123; pjax &#125;&#125; async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里是通过 <code>url</code> 插入 <code>busuanzi</code> 的，但是我们需要对这个 <code>js</code> 文件进行修改，于是我们需要将这个文件下载到本地</p>
+<p>将 <code>https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js</code> 下载至 <code>&lt;hexo-site&gt;/node_modules/hexo-theme-next/source/js/</code>，并将 <code>./node_modules/hexo-theme-next/layout/_third-party/statistics/busuanzi-counter.njk</code> 修改至下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.busuanzi_count.enable %&#125;</span><br><span class="line">  &lt;script&#123;&#123; pjax &#125;&#125; async src=&quot;/js/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对 <code>&lt;hexo-site&gt;/source/js/busuanzi.pure.mini.js</code> 修改如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var bszCaller,bszTag;!function()&#123;var c,d,e,a=!1,b=[];ready=function(c)&#123;return a||&quot;interactive&quot;===document.readyState||&quot;complete&quot;===document.readyState?c.call(document):b.push(function()&#123;return c.call(this)&#125;),this&#125;,d=function()&#123;for(var a=0,c=b.length;c&gt;a;a++)b[a].apply(document);b=[]&#125;,e=function()&#123;a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener(&quot;DOMContentLoaded&quot;,e,!1):document.attachEvent&amp;&amp;(document.detachEvent(&quot;onreadystatechange&quot;,e),window==window.top&amp;&amp;(clearInterval(c),c=null)))&#125;,document.addEventListener?document.addEventListener(&quot;DOMContentLoaded&quot;,e,!1):document.attachEvent&amp;&amp;(document.attachEvent(&quot;onreadystatechange&quot;,function()&#123;/loaded|complete/.test(document.readyState)&amp;&amp;e()&#125;),window==window.top&amp;&amp;(c=setInterval(function()&#123;try&#123;a||document.documentElement.doScroll(&quot;left&quot;)&#125;catch(b)&#123;return&#125;e()&#125;,5)))&#125;(),bszCaller=&#123;fetch:function(a,b)&#123;var c=&quot;BusuanziCallback_&quot;+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace(&quot;=BusuanziCallback&quot;,&quot;=&quot;+c),scriptTag=document.createElement(&quot;SCRIPT&quot;),scriptTag.type=&quot;text/javascript&quot;,scriptTag.defer=!0,scriptTag.src=a,scriptTag.referrerPolicy=&quot;no-referrer-when-downgrade&quot;,document.getElementsByTagName(&quot;HEAD&quot;)[0].appendChild(scriptTag)&#125;,evalCall:function(a)&#123;return function(b)&#123;ready(function()&#123;try&#123;a(b),scriptTag.parentElement.removeChild(scriptTag)&#125;catch(c)&#123;bszTag.hides()&#125;&#125;)&#125;&#125;&#125;,bszCaller.fetch(&quot;//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback&quot;,function(a)&#123;bszTag.texts(a),bszTag.shows()&#125;),bszTag=&#123;bszs:[&quot;site_pv&quot;,&quot;page_pv&quot;,&quot;site_uv&quot;],texts:function(a)&#123;this.bszs.map(function(b)&#123;var c=document.getElementById(&quot;busuanzi_value_&quot;+b);c&amp;&amp;(c.innerHTML=a[b])&#125;)&#125;,hides:function()&#123;this.bszs.map(function(a)&#123;var b=document.getElementById(&quot;busuanzi_container_&quot;+a);b&amp;&amp;(b.style.display=&quot;inline&quot;)&#125;)&#125;,shows:function()&#123;this.bszs.map(function(a)&#123;var b=document.getElementById(&quot;busuanzi_container_&quot;+a);b&amp;&amp;(b.style.display=&quot;inline&quot;)&#125;)&#125;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>你可以直接复制粘贴覆盖之前的 <code>busuanzi.pure.mini.js</code>，或者找到 <code>b.style.display=&quot;none&quot;</code> 修改为 <code>b.style.display=&quot;inline&quot;</code></p>
+<p>最后直接 <code>hexo clean &amp;&amp; hexo s</code> 重启服务即可。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>[1] <a href="https://boyinthesun.cn/post/error-live2d-busuanzi/">https://boyinthesun.cn/post/error-live2d-busuanzi/</a></p>
+<h2 id="转载声明"><a href="#转载声明" class="headerlink" title="转载声明"></a>转载声明</h2><p>免责声明：<br>    本文转自网络文章，转载此文章仅为个人收藏，分享知识，如有侵权，请联系博主进行删除。</p>
+<p>原文作者：zerobio </p>
+<p>原文地址：<a href="https://zerobio.github.io/archives/c9759728.html">https://zerobio.github.io/archives/c9759728.html</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+        <tag>live2d</tag>
+        <tag>busuanzi</tag>
+      </tags>
   </entry>
 </search>
