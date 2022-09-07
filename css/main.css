@@ -2997,12 +2997,11 @@ mark.search-keyword {
   position: fixed;
   top: 0;
 }
-/* 隐藏顶部线条 
+/************************* 全站背景 ************************/
 .headband {
   display: none;
 }
-*/
-/* 顶部边距 */
+*
 .header,
 .main-inner {
   margin-top: 10px;
@@ -3013,7 +3012,7 @@ mark.search-keyword {
     margin-top: 0;
   }
 }
-/* 侧边栏圆角 */
+/************************* 侧边栏 ************************/
 .site-brand-container {
   border-radius: 18px 18px 0 0;
 }
@@ -3023,7 +3022,6 @@ mark.search-keyword {
   }
 }
 /*
-// 添加背景图片
 body {
       background: url(/uploads/background.jpg); //自己喜欢的图片地址
       background-size: cover;
@@ -3034,24 +3032,27 @@ body {
         background-image: none;
       }
 }
-
-//博客内容透明化 0-1
-//文章内容的透明度设置
+*/
 .main-inner {
   opacity: 0.8;
 }
-
-//侧边框的透明度设置
 .sidebar {
   opacity: 0.8;
 }
-//菜单栏的透明度设置
 .header-inner {
   background: rgba(255,255,255,0.8);
 }
-//搜索框（local-search）的透明度设置
 .popup {
   opacity: 0.9;
 }
-
-*/
+.site-overview {
+  text-align: center;
+}
+canvas#canvas {
+  margin-top: 20px;
+}
+.site-brand-container {
+  background: url("/uploads/siderbar_header.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
