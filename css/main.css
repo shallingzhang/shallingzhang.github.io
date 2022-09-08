@@ -1,6 +1,6 @@
 :root {
   --body-bg-color: #eee;
-  --content-bg-color: #fff;
+  --content-bg-color: rgba(255,255,255,0.9);
   --card-bg-color: #f5f5f5;
   --text-color: #555;
   --blockquote-color: #666;
@@ -3010,10 +3010,11 @@ mark.search-keyword {
   top: 0;
 }
 /************************* 全站背景 ************************/
+/*
 .headband {
   display: none;
 }
-*
+*/
 .header,
 .main-inner {
   margin-top: 10px;
@@ -3024,7 +3025,7 @@ mark.search-keyword {
     margin-top: 0;
   }
 }
-/************************* 侧边栏 ************************/
+/************************** 侧边栏 ***************************/
 .site-brand-container {
   border-radius: 18px 18px 0 0;
 }
@@ -3049,6 +3050,7 @@ body {
   opacity: 0.9;
 }
 .sidebar {
+  background-color: transparent;
   opacity: 0.9;
 }
 .header-inner {
@@ -3060,7 +3062,7 @@ body {
   }
 }
 .popup {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 .site-overview {
   text-align: center;
