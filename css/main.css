@@ -1760,10 +1760,6 @@ header.header {
   position: fixed;
   z-index: 30;
   right: 30px;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
 }
 @media (max-width: 991px) {
   .back-to-top {
@@ -3021,29 +3017,34 @@ mark.search-keyword {
     border-radius: 0 0 0 0;
   }
 }
-/*
 body {
-      background: url(/uploads/background.jpg); //自己喜欢的图片地址
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: 50% 50%;
-      @media (prefers-color-scheme: dark) {
-        background-image: none;
-      }
+  background: url("/uploads/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
-*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: none;
+  }
+}
 .main-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .sidebar {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .header-inner {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
+}
+@media (prefers-color-scheme: dark) {
+  .header-inner {
+    background: rgba(51,51,51,0.9);
+  }
 }
 .popup {
-  opacity: 0.9;
+  opacity: 0.95;
 }
 .site-overview {
   text-align: center;
@@ -3055,4 +3056,44 @@ canvas#canvas {
   background: url("/uploads/siderbar_header.jpg");
   background-size: cover;
   background-position: 50% 50%;
+}
+/************************* 字体设置 ************************/
+.post-body {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 1.325em;
+  color: #000;
+}
+.posts-expand .post-title-link {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #000;
+}
+.posts-expand .post-title {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #000;
+  font-size: 2em;
+}
+.menu .menu-item a {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #000;
+  font-size: 1em;
+}
+.site-description {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 0.9em;
+}
+.post-copyright ul {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #000;
+  font-size: 1.15em;
+}
+.sidebar-inner {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #000;
+}
+.search-popup .search-result-container {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 1.2em;
+}
+.search-popup .search-input-container {
+  font-family: Times New Roman, cursive, Trebuchet MS, Times New Roman, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
