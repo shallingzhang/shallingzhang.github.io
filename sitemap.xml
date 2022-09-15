@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://shallingzhang.github.io/baidu_verify_code-ixcKO5haOK.html</loc>
+    <loc>https://shallingzhang.github.io/2022/08/31/Hexo-Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/</loc>
     
-    <lastmod>2022-09-08</lastmod>
+    <lastmod>2022-09-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://shallingzhang.github.io/2022/08/31/Hexo-Next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://shallingzhang.github.io/test.html</loc>
+    
+    <lastmod>2022-09-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://shallingzhang.github.io/baidu_verify_code-ixcKO5haOK.html</loc>
     
     <lastmod>2022-09-08</lastmod>
     
@@ -58,7 +67,7 @@
 
   <url>
     <loc>https://shallingzhang.github.io/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,49 +75,49 @@
   
   <url>
     <loc>https://shallingzhang.github.io/tags/hexo/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/tags/github/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/tags/next/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/tags/%E4%B8%BB%E9%A2%98/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/tags/live2d/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/tags/busuanzi/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -117,14 +126,14 @@
   
   <url>
     <loc>https://shallingzhang.github.io/categories/linux/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://shallingzhang.github.io/categories/hexo/</loc>
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
