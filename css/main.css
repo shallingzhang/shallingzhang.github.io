@@ -3035,18 +3035,18 @@ mark.search-keyword {
     border-radius: 0 0 0 0;
   }
 }
-/*
 body {
-      background: url(/uploads/background.jpg);   // 自己喜欢的图片地址
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: 100% 100%;
-      @media (prefers-color-scheme: dark) {
-        background-image: none;     // 夜间模式，不显示背景图片
-      }
+  background: url("/uploads/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100% 100%;
 }
-*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: none;
+  }
+}
 .main-inner {
   opacity: 0.9;
 }
@@ -3107,7 +3107,11 @@ canvas#canvas {
 }
 .sidebar-inner {
   font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  color: #000;
+}
+.sidebar-inner p,
+.sidebar-inner span,
+.sidebar-inner a {
+  color: #666;
 }
 .search-popup .search-result-container {
   font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -3115,4 +3119,8 @@ canvas#canvas {
 }
 .search-popup .search-input-container {
   font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+.footer-inner {
+  font-family: Times New Roman, cursive, Trebuchet MS, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #666;
 }

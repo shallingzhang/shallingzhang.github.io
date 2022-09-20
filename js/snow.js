@@ -1,4 +1,5 @@
 /*样式一*/
+/*六个花瓣雪花*/
 (function ($) {
     $.fn.snow = function (options) {
         var $flake = $('<div id="snowbox" />').css({
@@ -17,7 +18,7 @@
             options = $.extend({}, defaults, options);
         var interval = setInterval(function () {
             var startPositionLeft = Math.random() * documentWidth - 100,
-                startOpacity = 0.6 + Math.random(),
+                startOpacity = 0.5 + Math.random(),
                 sizeFlake = options.minSize + Math.random() * options.maxSize,
                 endPositionTop = documentHeight - 200,
                 endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
@@ -30,7 +31,7 @@
             }).animate({
                 top: endPositionTop,
                 left: endPositionLeft,
-                opacity: 0.3
+                opacity: 0.2
             }, durationFall, 'linear', function () {
                 $(this).remove()
             });
