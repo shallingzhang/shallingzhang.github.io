@@ -3,9 +3,9 @@
 function snowFall(snow) {
     /* 可配置属性 */
     snow = snow || {};
-    this.maxFlake = snow.maxFlake || 300; /* 最多片数 */
+    this.maxFlake = snow.maxFlake || 200; /* 最多片数 */
     this.flakeSize = snow.flakeSize || 20; /* 雪花形状 */
-    this.fallSpeed = snow.fallSpeed || 5; /* 坠落速度 */
+    this.fallSpeed = snow.fallSpeed || 3; /* 坠落速度 */
 }
 /* 兼容写法 */
 requestAnimationFrame = window.requestAnimationFrame ||
@@ -14,7 +14,7 @@ requestAnimationFrame = window.requestAnimationFrame ||
     window.msRequestAnimationFrame ||
     window.oRequestAnimationFrame ||
     function (callback) {
-        setTimeout(callback, 1000 / 60);
+        setTimeout(callback, 1200 / 60);
     };
 
 cancelAnimationFrame = window.cancelAnimationFrame ||
@@ -38,6 +38,7 @@ function snowCanvas() {
     snowcanvas.id = "snowfall";
     snowcanvas.width = window.innerWidth;
 //    snowcanvas.height = document.body.clientHeight;
+//    snowcanvas.height = window.innerHeight;
 //    snowcanvas.width = $(document).width();
     snowcanvas.height = $(document).height();
     snowcanvas.setAttribute("style", "position:absolute; top: 0; left: 0; z-index: 1; pointer-events: none;");
@@ -46,7 +47,7 @@ function snowCanvas() {
     this.ctx = snowcanvas.getContext("2d");
     /* 窗口大小改变的处理 */
     window.onresize = function () {
-      snowcanvas.width = window.innerWidth;    
+        snowcanvas.width = window.innerWidth;    
 //        snowcanvas.width = $(document).width();
         snowcanvas.height = $(document).height();
      /* snowcanvas.height = window.innerHeight */
