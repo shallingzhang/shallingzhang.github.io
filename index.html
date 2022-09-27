@@ -630,7 +630,7 @@ if(canvas.getContext){
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-09-27 13:23:47 / 修改时间：13:25:52" itemprop="dateCreated datePublished" datetime="2022-09-27T13:23:47+08:00">2022-09-27</time>
+      <time title="创建时间：2022-09-27 13:23:47 / 修改时间：13:42:03" itemprop="dateCreated datePublished" datetime="2022-09-27T13:23:47+08:00">2022-09-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -674,53 +674,15 @@ if(canvas.getContext){
 <li>如果电脑突然罢工，我们的源文件也不会丢失。</li>
 <li>在重做系统或更换电脑的时候，我们直接 clone 备份仓库到本地就可以了。</li>
 </ul>
-<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><h4 id="前提准备"><a href="#前提准备" class="headerlink" title="前提准备"></a>前提准备</h4><p>你已经初始化好了自己想要备份的那个博客。操作系统上 GIT、GitHub 的环境也已经准备好了。</p>
-<p>由于 hexo deploy上传部署到 git hub pages 的其实是 hexo 编译后的文件，在本地目录里自动生成的 .deploy_git里面，是用来生成网页的，不包含源文件。而其它文件 ，包括我们写在 source 里面的文章、配置文件、主题文件，都没有上传到 git hub 仓库。</p>
-<h4 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h4><ol>
-<li><p>在 github上建一个仓库，命令为 hexobackup ,(这里名称自己随便起)。</p>
-</li>
-<li><p>原始的博客根目录 blog_folder 下只有 .deploy_git （隐藏文件夹），是没有.git文件夹的，于是我们先去自己的家目录或者桌面等随便一个地方，把刚刚的 hexobackup 仓库给 clone下来。然后剪切出里面的 .git 隐藏文件夹，复制到需要备份的博客根目录 blog_folder下。</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone git@gitee.com:shallingzhang/hexobackup.git</span><br><span class="line">// git@gitee.com:shallingzhang/hexobackup.git 改为你自己的备份仓库</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>在博客根目录下修改 .gitignore 配置文件，用来在上传时候忽略一些文件，即不上传 .gitignore 配置文件中忽略的文件。此文件有就直接修改，没有的话请自己手动添加。<br>.gitignore 配置文件内容如下：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意，如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传，最好是显示隐藏文件，检查一下有没有，否则上传的时候会出错，导致你的主题文件无法上传，这样你的配置在别的电脑上就用不了。</p>
-</blockquote>
-<p>   hexo 的源文件作用说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">_config.yml  站点的配置文件，需要拷贝；</span><br><span class="line">themes/  主题文件夹，需要拷贝；</span><br><span class="line">source/  博客文章的.md文件，需要拷贝；</span><br><span class="line">scaffolds/  文章的模板，需要拷贝；</span><br><span class="line">package.json  安装包的名称，需要拷贝；</span><br><span class="line">.gitignore  限定在push时哪些文件可以忽略，需要拷贝；</span><br><span class="line">.git/  主题和站点都有，标志这是一个git项目，不需要拷贝；</span><br><span class="line">node_modules/  是安装包的目录，在执行npm install的时候会重新生成，不需要拷贝；</span><br><span class="line">public/  是hexo g生成的静态网页，不需要拷贝；</span><br><span class="line">.deploy_git  同上，hexo g也会生成，不需要拷贝；</span><br><span class="line">db.json  自动生成文件，不需要拷贝。</span><br><span class="line"># 其实不需要拷贝的文件正是.gitignore中所忽略的。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>通过在hexo博客的根目录下执行如下命令，将本地文件备份到 Github 上。</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit  -m  &quot;backup20220819&quot;  （注：“backup20220819”是 git 提交变更标注信息，你可以自定义）</span><br><span class="line">git push -u origin main   （注：此操作目的是把本地仓库push到github上面hexobackup仓库的main分支）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h2><h3 id="前提准备-1"><a href="#前提准备-1" class="headerlink" title="前提准备"></a>前提准备</h3><p>Hexo 基础开发环境已经部署好，包括 nodejs (已集成npm) ,git等。</p>
-<h3 id="详细步骤-1"><a href="#详细步骤-1" class="headerlink" title="详细步骤"></a>详细步骤</h3><ol>
-<li>克隆备份仓库到本地</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitee.com/shallingzhang/hexobackup.git</span><br><span class="line">// https://gitee.com/shallingzhang/hexobackup.git 换成你自己的仓库</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>安装所需程序及插件</li>
-</ol>
-<p>在博客根目录下执行如下命令，在此不需要执行hexo init这条指令，因为不是从零搭建起新博客。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>重新生成网站文件</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>访问本地站点 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 查看是否恢复成功。</li>
-</ol>
-
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/27/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
